@@ -1,9 +1,6 @@
-/**
- * @format
- */
+/*copiar igual tanto para Android quanto para iOs*/
+import { AppRegistry } from 'react-native';
+import App from './src/App';
+require('RCTNativeAppEventEmitter');
 
-import {AppRegistry} from 'react-native';
-import App from './App';
-import {name as appName} from './app.json';
-
-AppRegistry.registerComponent(appName, () => App);
+AppRegistry.registerComponent('reduxPostsList', () => App)
