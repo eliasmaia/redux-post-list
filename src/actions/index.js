@@ -4,14 +4,10 @@ import axios from 'axios';
 
 export const fetchPosts = () => {
   // fazer pedido HTTP para obter todos os posts
-  axios.get('https://jsonplaceholder.typicode.com/posts')
-    .then((response) => {
-      console.log(response);
-    });
+  const request = axios.get('https://jsonplaceholder.typicode.com/posts');
 
-  //depois despachar action com os dados dos posts */
   return {
     type: 'FETCH_POSTS',
-    payload:
+    payload: request
   };
 };

@@ -1,6 +1,7 @@
 import React from 'react';
-import { createStore } from 'redux';
+import { createStore, applyMiddleware } from 'redux';
 import { View, Text } from 'react-native';
+import ReduxPromise from 'redux-promise';
 import List from './components/List';
 import { Provider } from 'react-redux';
 import reducers from './reducers';
@@ -9,7 +10,8 @@ import reducers from './reducers';
 // enhance outro component
 
 //create application state
-const store = createStore(reducers);
+const createStoreWithMiddleware = applyMiddleware(ReduxPromise)(createStore);
+const store = createStoreWithMiddleware(reducers);
 
 const App = () => {
   return (
