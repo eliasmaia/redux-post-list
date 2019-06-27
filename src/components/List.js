@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { View, Text } from 'react-native';
+import { connect } from 'react-redux';
 import ListItem from './ListItem';
 
 class List extends Component {
@@ -22,4 +23,12 @@ class List extends Component {
   }
 }
 
-export default List;
+const mapStateToProps = () => {
+
+}
+
+const mapDispatchToProps = () => {
+
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(List);
