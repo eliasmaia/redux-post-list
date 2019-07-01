@@ -12,6 +12,14 @@ class List extends Component {
   }
 
   render(){
+    if(!this.props.posts){
+      return (
+        <Text>Loading ...</Text>
+      );
+    }
+
+    console.log(this.props);
+
     return (
       <View>
         <ListItem />
@@ -25,8 +33,8 @@ class List extends Component {
   }
 }
 
-const mapStateToProps = () => {
-  return {};
+const mapStateToProps = (state) => {
+  return { posts: state.posts.all };
 }
 
 const mapDispatchToProps = (dispatch) => {
