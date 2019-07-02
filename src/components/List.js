@@ -12,22 +12,23 @@ class List extends Component {
   }
 
   render(){
-    if(!this.props.posts){
+    const { posts } = this.props;
+
+    if(!posts){
       return (
         <Text>Loading ...</Text>
       );
     }
 
+    const postItems = posts.map(post => {
+      return <ListItem key={post.id} item={ post } />;
+    });
+
     console.log(this.props);
 
     return (
       <View>
-        <ListItem />
-        <ListItem />
-        <ListItem />
-        <ListItem />
-        <ListItem />
-        <ListItem />
+        {postItems}
       </View>
     );
   }

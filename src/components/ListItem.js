@@ -1,9 +1,10 @@
 import React from 'react';
 import { Text } from 'react-native';
 
-const ListItem = (props) => {
+const ListItem = {( item )} => {
+  const { title } = item;
   return (
-    <Text>Item</Text>
+    <Text>{title}</Text>
   );
 };
 
