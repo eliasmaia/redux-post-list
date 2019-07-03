@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { View, Text } from 'react-native';
+import { ScrollView, Text } from 'react-native';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import { fetchPosts } from '../actions';
@@ -27,9 +27,9 @@ class List extends Component {
     console.log(this.props);
 
     return (
-      <View>
+      <ScrollView>
         {postItems}
-      </View>
+      </ScrollView>
     );
   }
 }

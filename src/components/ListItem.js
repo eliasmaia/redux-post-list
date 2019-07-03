@@ -1,11 +1,19 @@
 import React from 'react';
-import { Text } from 'react-native';
+import { Text, TouchableOpacity, StyleSheet } from 'react-native';
 
-const ListItem = {( item )} => {
+const ListItem = ( {item} ) => {
   const { title } = item;
   return (
-    <Text>{title}</Text>
+    <TouchableOpacity style={styles.itemStyle} onPress={() => null}>
+      <Text>{title}</Text>
+    </TouchableOpacity>
   );
 };
+
+const styles = StyleSheet.create({
+  itemStyle: {
+    marginBottom: 10
+  }
+});
 
 export default ListItem;
