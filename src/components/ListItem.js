@@ -1,10 +1,10 @@
 import React from 'react';
 import { Text, TouchableOpacity, StyleSheet } from 'react-native';
 
-const ListItem = ( {item} ) => {
+const ListItem = ( {item, onItemPress} ) => {
   const { title } = item;
   return (
-    <TouchableOpacity style={styles.itemStyle} onPress={() => null}>
+    <TouchableOpacity style={styles.itemStyle} onPress={() => onItemPress(item.id)}>
       <Text>{title}</Text>
     </TouchableOpacity>
   );

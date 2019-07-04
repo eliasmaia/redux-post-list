@@ -12,11 +12,11 @@ export const fetchPosts = () => {
     type: 'FETCH_POSTS',
     payload: request
   };
-}
+};
 
-export const fetchPost = (id) {
+export const fetchPost = (id) => {
   // faz pedido HTTP
-  const request = axios.get(`${REQUEST_URL}/posts/${i}`);
+  const request = axios.get(`${REQUEST_URL}/posts/${id}`);
 
   //retorna action
   return {

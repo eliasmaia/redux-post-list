@@ -11,6 +11,11 @@ class List extends Component {
     this.props.fetchPosts();
   }
 
+  onItemPress(id){
+    //muda de cena para postDetail
+    Actions.postDetail({ postId: id});
+  }
+
   render(){
     const { posts } = this.props;
 
@@ -21,7 +26,7 @@ class List extends Component {
     }
 
     const postItems = posts.map(post => {
-      return <ListItem key={post.id} item={ post } />;
+      return <ListItem key={post.id} item={ post } onItemPress={this.onItemPress} />;
     });
 
     console.log(this.props);

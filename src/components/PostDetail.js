@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { View, Text } from 'react-native';
+import { View, Text, StyleSheet } from 'react-native';
 import { connect } from 'react-redux';
 
 import { fetchPost } from '../actions';
@@ -11,20 +11,32 @@ class PostDetail extends Component {
 
 
   render(){
-    const { title, body } = this.props.post;
+
 
     if (!this.props.post){
       return <Text>Carregando ... </Text>
     }
 
+    const { title, body } = this.props.post;
+
     return (
       <View>
-        <Text>{title}</Text>
-        <Text>{body}</Text>
+        <Text style={styles.titleStyle}>{title}</Text>
+        <Text style={styles.bodyStyle}>{body}</Text>
       </View>
     );
   }
 }
+
+const styles = StyleSheet.create({
+  titleStyle: {
+    fontSize: 20,
+    fontWeight: 'bold'
+  },
+  bodyStyle: {
+    fontSize: 16,
+  }
+});
 
 const mapStateToProps = (state) => {
   return { post: state.posts.selected};

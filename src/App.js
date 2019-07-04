@@ -2,10 +2,9 @@ import React from 'react';
 import { createStore, applyMiddleware } from 'redux';
 import { View, Text } from 'react-native';
 import ReduxPromise from 'redux-promise';
-import List from './components/List';
-import PostDetail from './components/PostDetail';
 import { Provider } from 'react-redux';
 import reducers from './reducers';
+import Router from './Router';
 
 //higher order component: Provider
 // enhance outro component
@@ -17,9 +16,7 @@ const store = createStoreWithMiddleware(reducers);
 const App = () => {
   return (
     <Provider store={store}>
-      <View style={{flex: 1, justifyContent: 'center', marginTop }}>
-        <PostDetail />
-      </View>
+      <Router />
     </Provider>
   );
 }; //functional component
